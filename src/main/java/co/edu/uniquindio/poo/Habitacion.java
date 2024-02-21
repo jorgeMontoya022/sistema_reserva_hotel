@@ -1,14 +1,19 @@
 package co.edu.uniquindio.poo;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Habitacion {
     private int numeroHabitacion;
     private TipoHabitacion Tipohabitacion;
     private int precio;
+    private Collection<Servicio> servicios;
     
     public Habitacion(int numeroHabitacion, TipoHabitacion tipohabitacion, int precio) {
         this.numeroHabitacion = numeroHabitacion;
         Tipohabitacion = tipohabitacion;
         this.precio = precio;
+        this.servicios = new ArrayList<>();
     }
 
     public int getNumeroHabitacion() {
@@ -35,13 +40,8 @@ public class Habitacion {
         this.precio = precio;
     }
 
-    @Override
-    public String toString() {
-        return "Habitacion{" +
-                "numero=" + numeroHabitacion +
-                ", tipo=" + Tipohabitacion + // Asume que tipoHabitacion.toString() también devuelve algo legible
-                ", precio=" + precio +
-                '}';
+    public void agregarServicios(Servicio servicio){
+        servicios.add(servicio);
     }
 
 }

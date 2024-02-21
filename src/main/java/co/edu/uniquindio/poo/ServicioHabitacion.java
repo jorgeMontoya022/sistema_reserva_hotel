@@ -1,10 +1,15 @@
 package co.edu.uniquindio.poo;
 
-public class ServicioHabitacion extends Servicio{
+public class ServicioHabitacion extends Servicio implements IConsumible{
 
     public ServicioHabitacion(String descripcion) {
         super(descripcion);
-        //TODO Auto-generated constructor stub
+        
+    }
+
+    @Override
+    public void consumir() {
+        System.out.println("realizando servicio de habitación");
     }
     
 }

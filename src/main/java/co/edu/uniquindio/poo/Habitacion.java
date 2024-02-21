@@ -34,4 +34,14 @@ public class Habitacion {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
+
+    @Override
+    public String toString() {
+        return "Habitacion{" +
+                "numero=" + numeroHabitacion +
+                ", tipo=" + Tipohabitacion + // Asume que tipoHabitacion.toString() también devuelve algo legible
+                ", precio=" + precio +
+                '}';
+    }
+
 }

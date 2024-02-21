@@ -46,4 +46,15 @@ public class Reserva {
     public void setFechaSalida(LocalDate fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "habitacion=" + habitacion +
+                ", cliente=" + cliente.getNombreCliente() + // Asumiendo que Cliente tiene un método getNombreCliente
+                ", fechaEntrada=" + fechaEntrada +
+                ", fechaSalida=" + fechaSalida +
+                '}';
+    }
+
 }

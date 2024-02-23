@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 public class Habitacion {
     private int numeroHabitacion;
@@ -44,8 +45,20 @@ public class Habitacion {
         this.precio = precio;
     }
 
+    public Collection<Servicio> getServicios() {
+        return Collections.unmodifiableCollection(servicios);
+    }
+
+    public void setServicios(Collection<Servicio> servicios) {
+        this.servicios = servicios;
+    }
+
     public void agregarServicios(Servicio servicio){
         servicios.add(servicio);
+    }
+
+    public void eliminarServicios(Servicio servicio){
+        servicios.remove(servicio);
     }
 
 }

@@ -1,14 +1,24 @@
 package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class GestionReservas {
-    private List<Reserva> reservas;
+    private Collection<Reserva> reservas;
 
     public GestionReservas() {
         this.reservas = new ArrayList<>();
+    }
+
+    public Collection<Reserva> getReservas() {
+        return Collections.unmodifiableCollection(reservas);
+    }
+
+    public void setReservas(Collection<Reserva> reservas) {
+        this.reservas = reservas;
     }
 
     public void agregarReserva(Reserva reserva) {
@@ -19,7 +29,7 @@ public class GestionReservas {
         reservas.remove(reserva);
     }
 
-    public List<Reserva> obtenerReservasActivasPorCliente(Cliente cliente) {
+    public Collection<Reserva> obtenerReservasActivasPorCliente(Cliente cliente) {
         return reservas.stream()
                 .filter(reserva -> reserva.getCliente().equals(cliente))
                 .collect(Collectors.toList());

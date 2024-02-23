@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
 
 import java.time.LocalDate;
 
@@ -13,6 +13,14 @@ public class Reserva {
         this.cliente = cliente;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
+    }
+
+    public Reserva(LocalDate fechaEntrada, LocalDate fechaSalida) {
+        this.fechaEntrada = fechaEntrada;
+        this.fechaSalida = fechaSalida;
+    }
+
+    public Reserva() {
     }
 
     public Habitacion getHabitacion() {

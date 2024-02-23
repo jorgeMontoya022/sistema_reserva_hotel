@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,6 +11,10 @@ public class Cliente {
     public Cliente(String nombreCliente, String DNI){
         this.nombreCliente = nombreCliente;
         this.DNI = DNI;
+        this.reservasActivas = new ArrayList<>();
+    }
+
+    public Cliente(){
         this.reservasActivas = new ArrayList<>();
     }
 

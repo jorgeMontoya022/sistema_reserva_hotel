@@ -1,10 +1,13 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
 
 public abstract class Servicio {
     private String descripcion;
 
     public Servicio(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Servicio() {
     }
 
     public String getDescripcion() {

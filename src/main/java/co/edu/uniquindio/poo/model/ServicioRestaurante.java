@@ -1,4 +1,6 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
+
+import co.edu.uniquindio.poo.services.IConsumible;
 
 public class ServicioRestaurante extends Servicio implements IConsumible {
 

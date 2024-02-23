@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,6 +13,10 @@ public class Habitacion {
         this.numeroHabitacion = numeroHabitacion;
         Tipohabitacion = tipohabitacion;
         this.precio = precio;
+        this.servicios = new ArrayList<>();
+    }
+
+    public Habitacion() {
         this.servicios = new ArrayList<>();
     }
 

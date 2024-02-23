@@ -1,6 +1,8 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
 
-public class ServicioSpa extends Servicio implements IConsumible{
+import co.edu.uniquindio.poo.services.IConsumible;
+
+public class ServicioSpa extends Servicio implements IConsumible {
 
     public ServicioSpa(String descripcion) {
         super(descripcion);

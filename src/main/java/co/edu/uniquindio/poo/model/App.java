@@ -1,9 +1,14 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.model;
 
 import java.time.LocalDate;
 
 public class App {
     public static void main(String[] args) {
+    obtenerReservasCliente();
+
+    }
+
+    private static void obtenerReservasCliente() {
         var cliente = new Cliente("Jorge", "123456");
         var cliente2 = new Cliente("Camila", "7777777");
 
@@ -19,10 +24,11 @@ public class App {
         Reserva reserva3 = new Reserva(habitacion103, cliente2, LocalDate.of(2024, 2, 21), LocalDate.of(2024, 3, 1));
         Reserva reserva4 = new Reserva(habitacion104, cliente2, LocalDate.of(2024, 2, 21), LocalDate.of(2024, 3, 1));
 
+        reserva1.setHabitacion(habitacion101);
+
         ServicioHabitacion servicioHabitacion = new ServicioHabitacion("Realizar servicios de la habitacion");
 
         habitacion101.agregarServicios(servicioHabitacion);
-        
 
         gestorDeReservas.agregarReserva(reserva1);
         gestorDeReservas.agregarReserva(reserva2);
@@ -30,7 +36,6 @@ public class App {
         gestorDeReservas.agregarReserva(reserva4);
         System.out.println(gestorDeReservas.obtenerReservasActivasPorCliente(cliente2));
         System.out.println(gestorDeReservas.obtenerReservasActivasPorCliente(cliente));
-     
-
     }
+
 }

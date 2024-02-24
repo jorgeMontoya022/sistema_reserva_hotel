@@ -1,15 +1,15 @@
 package co.edu.uniquindio.poo.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class Cliente {
     private String nombreCliente;
     private String DNI;
+    private int edad;
 
-    public Cliente(String nombreCliente, String DNI){
+    public Cliente(String nombreCliente, String DNI, int edad){
         this.nombreCliente = nombreCliente;
         this.DNI = DNI;
+        this.edad = edad;
     }
 
     public Cliente(){
@@ -29,6 +29,14 @@ public class Cliente {
 
     public void setDNI(String dNI) {
         DNI = dNI;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
 }

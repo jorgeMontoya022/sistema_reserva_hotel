@@ -7,10 +7,10 @@ import java.util.Collections;
 public class Habitacion {
     private int numeroHabitacion;
     private TipoHabitacion Tipohabitacion;
-    private int precio;
+    private double precio;
     private Collection<Servicio> servicios;
     
-    public Habitacion(int numeroHabitacion, TipoHabitacion tipohabitacion, int precio) {
+    public Habitacion(int numeroHabitacion, TipoHabitacion tipohabitacion, double precio) {
         this.numeroHabitacion = numeroHabitacion;
         Tipohabitacion = tipohabitacion;
         this.precio = precio;
@@ -37,11 +37,11 @@ public class Habitacion {
         Tipohabitacion = tipohabitacion;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -59,6 +59,12 @@ public class Habitacion {
 
     public void eliminarServicios(Servicio servicio){
         servicios.remove(servicio);
+    }
+
+    @Override
+    public String toString() {
+        return "Habitacion [numeroHabitacion=" + numeroHabitacion + ", Tipohabitacion=" + Tipohabitacion + ", precio="
+                + precio + ", servicios=" + servicios + "]";
     }
 
 }

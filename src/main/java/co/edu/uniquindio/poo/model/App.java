@@ -1,16 +1,18 @@
 package co.edu.uniquindio.poo.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-    obtenerReservasCliente();
+        obtenerReservasCliente();
 
     }
 
     private static void obtenerReservasCliente() {
-        var cliente = new Cliente("Jorge", "123456");
-        var cliente2 = new Cliente("Camila", "7777777");
+        var cliente = new Cliente("Jorge", "123456", 18);
+        var cliente2 = new Cliente("Camila", "7777777", 24);
 
         Habitacion habitacion101 = new Habitacion(101, TipoHabitacion.DOBLE, 2000);
         Habitacion habitacion102 = new Habitacion(102, TipoHabitacion.SUITE, 2200);
@@ -34,6 +36,12 @@ public class App {
         gestorDeReservas.agregarReserva(reserva2);
         gestorDeReservas.agregarReserva(reserva3);
         gestorDeReservas.agregarReserva(reserva4);
+
+        gestorDeReservas.aplicarDescuento(new ArrayList<>(gestorDeReservas.obtenerReservasActivasPorCliente(cliente)));
+
+        int cantidadClientesMayoresEdad = gestorDeReservas.obtenerCantidadClientesMayoresEdad();
+
+        System.out.println("cantidad de clientes mayores de edad " + cantidadClientesMayoresEdad);
         System.out.println(gestorDeReservas.obtenerReservasActivasPorCliente(cliente2));
         System.out.println(gestorDeReservas.obtenerReservasActivasPorCliente(cliente));
     }

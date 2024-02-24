@@ -36,6 +36,31 @@ public class GestionReservas {
 
     }
 
+    public void aplicarDescuento(List<Reserva> reservas) {
+
+        if (reservas.size() >= 4) {
+            for (Reserva reserva : reservas) {
+                Habitacion habitacion = reserva.getHabitacion();
+                double descuento = habitacion.getPrecio() * 0.1;
+                habitacion.setPrecio(descuento);
+            }
+        }
+
+    }
+
+    public int obtenerCantidadClientesMayoresEdad() {
+        List<Cliente> cantidadClientesMayoresEdad = new ArrayList<>();
+
+        for (Reserva reserva : reservas) {
+            Cliente cliente = reserva.getCliente();
+            if (cliente.getEdad() >= 18 && !cantidadClientesMayoresEdad.contains(cliente)) {
+                cantidadClientesMayoresEdad.add(cliente);
+
+            }
+        }
+        return cantidadClientesMayoresEdad.size();
+    }
+
     @Override
     public String toString() {
         return "GestionReservas [reservas=" + reservas + "]";
